@@ -1,0 +1,18 @@
+<nav class="bottomMenu bgBody">
+
+	<a ng-if="user.type === 'client'" href="#/connected">
+		<img ng-src="{{getMenuIcon('tipeek')}}" alt="" width="50px">
+	</a>
+
+	<a href="#/comments">
+		<img ng-src="{{getMenuIcon('comments')}}" alt="" width="50px">
+	</a>
+
+	<a ng-if="user.type === 'client'" href="#/likes">
+		<img ng-src="{{getMenuIcon('likes')}}" alt="" width="50px">
+	</a>
+
+	<a href="#/menu-{{user.type}}">
+		<img ng-src="{{getMenuIcon('user')}}" alt="" width="50px">
+	</a>
+</nav>

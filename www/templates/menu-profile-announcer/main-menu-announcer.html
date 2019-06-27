@@ -1,0 +1,39 @@
+<ion-view>
+	<ion-content class="menu-announcer">
+
+		<div id="mainMenuAnnouncer">
+
+			<h1>{{ user.name }}</h1>
+
+			<div id="img"><img ng-src="{{ user.picture }}" alt=""></div>
+
+			<nav class="navigation">
+				<ul>
+					<li>
+						<i class="ion-ios-search"></i>
+						<a href="#/properties-announcer"><span> Mes annonces</span></a>
+					</li>
+					<li>
+						<i class="ion-chatbox-working"></i>
+						<a href="#/messages-announcer"><span> Mes messages</span></a>
+					</li>
+					<li>
+						<i class="ion-ios-settings"></i>
+						<a href="#/settings-announcer"><span>Paramètres</span></a>
+					</li>
+					<li>
+						<i class="ion-android-share-alt"></i>
+						<a href="#/share"><span ng-click="">Partagez l'application</span></a>
+					</li>
+					<li>
+						<p ng-click="reinitUser()">Réinitialiser mon compte</p>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<bottom-menu></bottom-menu>
+
+	</ion-content>
+</ion-view>
+

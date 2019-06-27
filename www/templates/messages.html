@@ -1,0 +1,23 @@
+<ion-view>
+	<ion-content class="padding comment">
+
+		<div class="bar bar-header bar-light">
+			<button class="back-connected"><a href="#/comments"><i class="ion-ios-arrow-left"></i></a></button>
+			<h1 class="title">Messages</h1>
+		</div>
+
+		<ul style="margin-top:50px; display: flex; flex-direction: column;">
+			<li ng-repeat="message in messages" ng-class="getMessageStyle(message.userId)">
+				<p>{{message.text}}</p>
+				<img ng-src="{{message.user[0].picture}}" width="30" height="30" />
+			</li>
+		</ul>
+
+		<div class="content">
+			<form class="infosProfile">
+				<input type="textarea" placeholder="Votre message" ng-model="newMessage" ng-change="changeNewMessage(newMessage)">
+				<div class="send" ng-click="sendMessage()"><i class="ion-ios-paperplane-outline"></i></div>
+			</form>
+		</div>
+	</ion-content>
+</ion-view>

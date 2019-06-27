@@ -1,0 +1,329 @@
+.tipeek_screen_path_appartment {
+	background-color: #fff;
+	display: block;
+	margin:0;
+
+	.formErrorAnnounce, .formErrorResearch {
+		color:#444;
+		margin-top: 50px;
+	}
+
+	h1 {
+		&.title {
+			font-family: $avenirLight;
+		}
+	}
+
+	.search {
+		margin-top:50px;
+		font-family: $avenirLight;
+		margin-left:25px;
+	}
+
+	.formErrorRegister {
+		color:#fff;
+		text-align: center;
+		padding-top:10px;
+		display: block;
+		margin-top: 50px;
+		font-family: $avenirLight;
+	}
+
+	.formErrorRegisterLocation{
+		color:#444;
+		text-align: center;
+		padding-top:10px;
+		display: block;
+		margin-top: 50px;		
+	}
+
+	.style_input_path_appartment {
+		display: block;
+		width:100%;
+		margin:auto;
+		color:#7c808d;
+		margin-top:50px;
+		height: 90vh;
+		font-family: $avenirLight;
+
+		.formErrorResearch {
+			color:#444;
+			margin-top:50px;
+			font-family: $avenirLight;
+		}
+
+		.wording {
+			width:10%;
+			display: inline-block;
+			float:right;
+			color:$purple;
+			font-family: $avenirLight;
+		}
+
+		input {
+			width:100%;
+			border:none;
+
+			&#description {
+				width: 100%;
+				border:none;
+				color:#7c808d;
+				border-bottom:1px solid #7c808d;
+				height:40px;
+			}
+			
+			&#localisation {
+				width: 100%;
+				border:none;
+				color:#7c808d;
+				border-bottom:1px solid #7c808d;
+				height:40px;
+			}	
+
+			&#number {
+				display:inline-block;
+				width:10%;
+				font-family: $avenirLight;
+			}
+
+			&#street {
+				display: inline-block;
+				width:33%;
+				font-family: $avenirLight;
+			}
+
+			&#zipcode {
+				display: inline-block;
+				width:19%;
+				font-family: $avenirLight;
+			}
+
+			&#city {
+				display: inline-block;
+				width:12%;
+				font-family: $avenirLight;
+				
+			}
+
+			&.surface {
+				width:50%;
+				display:inline-block;
+				margin-top: -7px;
+				font-family: $avenirLight;
+
+			}
+
+			&.price {
+				width:50%;
+				display:inline-block;
+				margin-top: -7px;
+				font-family: $avenirLight;
+
+			}
+
+		}
+		input.locatAgency {
+			border-bottom:1px solid #7c808d!important;
+			height:50px;
+			margin-bottom: 20px;
+		}
+
+		h5 {
+			color:#995ddd;
+			font-family: $avenirLight;
+		}
+
+		.ion-social-euro {
+			color:#995ddd;
+			display: inline-block;
+		}
+
+		button {
+			background-color: #FF7FEB;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			display: block;
+			margin: 10px auto;
+
+				&.largeLocat {
+					width: 172px;
+					font-size: 1em;
+					border-radius: 30px;
+					float: none;
+			}
+
+			&.geolocAnnouncer {
+				display: inline-block;
+				background-color: transparent;
+				color: #1ED3A6;
+				font-size: 2em;
+				float: right;
+				position: absolute;
+				right: 0;
+				top: 39px;			
+			}
+		}
+		.inputStyle {
+ 
+ 
+			input[type="radio"], input[type="checkbox"] {
+				display: none;
+
+				&:checked {
+					position: absolute;
+					left: -9999px;
+
+					&+label {
+
+						color: #995ddd;
+
+						&.labelValid {
+							font-family: $avenirLight;
+
+							&>span {
+								border-color: #995ddd;
+							}
+
+							.ion-android-done {
+								display: block;
+								color: #995ddd;
+							}
+
+							.ion-ios-arrow-left {
+								display: block;
+								color:#995ddd;
+							}
+
+						}
+
+						&.labelRadio {
+
+							&:before {
+
+								content: "\2022";
+								display: inline-block;
+								border-radius: 50px;
+								text-align: center;
+								font-size: 1.5em;
+								line-height: 1;
+								border-color:#995ddd;
+								float:right;
+	    						clear:both;
+							}
+						}
+					}
+				}
+			}
+
+			label {
+				color: #7c808d;
+				margin:30px 10px 30px 20px;
+				font-size: 1.2em;
+				display: block;
+				cursor: pointer;
+				position: relative;
+
+				&.labelRadio {
+
+					&:before {
+
+						content: "";
+						display: inline-block;
+						width: 20px;
+						height: 20px;
+						background-color: transparent;
+						border-radius:50px;
+						border: 1px solid #7c808d;
+						margin-right: 20px;
+						float:right;
+						clear:both;
+					}
+				}
+
+				&.labelValid {
+					font-family: $avenirLight;
+
+					&>span {
+						float: right;
+					    border: 1px solid #7c808d;
+					    border-radius: 50%;
+					    width: 20px;
+					    height: 20px;
+					    box-sizing: border-box;
+					    font-size: 0.8em;
+					    padding: 0 4px;
+					}
+
+					.ion-android-done {
+						display: none;
+					}
+				}
+			}
+			.buttonEdit {
+				display: inline-block;
+				float: right;
+			}
+		}
+
+		button {
+
+			&.validSearchAppartment {
+				background-color: #20deaf;
+			    color: #fff;
+			    border: 1px solid #20deaf;
+			    padding: 10px;
+			    width: 60px;
+			    display: block;
+				border-radius: 50%;
+				float: right;
+				font-size: 2em;
+				position: absolute;
+			    right: 50px;
+			    bottom: 50px;
+			}
+
+			&.backAppartment {
+				background-color: #b2ccd7;
+			    color: #fff;
+			    border: 1px solid #b2ccd7;
+			    padding: 10px;
+			    width: 60px;
+			    height:60px;
+			    display: block;
+				border-radius: 50%;
+				float: left;
+				font-size: 2em;
+				position: absolute;
+			    left: 50px;
+			    bottom: 50px;		
+			}
+
+			&.validSearchAppartment, &.backAppartment {
+				margin-top: 50px;
+			}
+		}		
+	}
+
+	.style_input_path_appartment.contacts {
+		margin: 0;
+
+		h5 {
+			text-transform: uppercase;
+			margin-left:15px;
+		}
+	}
+	.recap {
+
+		.inputStyle {
+
+			margin:40px auto;
+
+			label {
+				display: initial!important;
+				margin:50px auto!important;
+			}
+
+		}
+	}
+}

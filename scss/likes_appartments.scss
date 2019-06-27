@@ -1,0 +1,383 @@
+.likes {
+	h1 {
+		&.title {
+			font-family: $avenirLight;
+			color:#000;
+		}
+	}
+
+.list_elementsLike {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 50px;
+	align-items: center;
+
+	.element {
+		display: inline-block;
+		background-color: #fff;
+		max-width: 500px;
+		width: 98%;
+		height: 180px;
+		margin: 0 10px;
+		margin-top: 20px;
+		-webkit-box-shadow: 1px 1px 3px 0px #656565;
+		box-shadow: 1px 1px 3px 0px #656565;
+		height: 195px;
+		text-decoration:none;
+		color:inherit;
+
+		&:first-child {
+			margin-top: 50px;
+		}
+
+		a {
+			
+		}
+
+		img {
+			&.pictureAppartment {
+				width: 51%;
+				height:20vh;
+			}
+			display: inline-block;
+		}
+
+		.element_data {
+			position: relative;
+			padding: 20px;
+			width: 48%;
+			display: inline-block;
+			font-family: $avenirMedium;
+			vertical-align: text-bottom;
+
+			.city {
+				font-weight: 600;
+			}
+
+			.propertyType {
+				font-weight: 600;
+			}
+
+			.nbRooms {
+				font-weight: 600;
+				padding: 5px 0;
+			}
+
+			.price {
+				color:#20deaf;
+				font-size: 1.2em
+			}
+		}
+
+		.bottom {
+			display: block;
+			.delete {
+				display:inline-block;
+				color:#7c808d;
+				font-family: $avenirLight;
+
+				span {
+					display: inline-block;
+					vertical-align: top;
+					margin-top: 15px;
+				}
+			}
+
+			.comments {
+				display: inline-block;
+				margin:auto 20px;
+				color:#7c808d;
+				font-family: $avenirLight;
+
+				span {
+					display: inline-block;
+					vertical-align: top;
+					margin-top: 15px;
+				}
+			}
+		}
+
+		.announceur {
+			position: relative;
+
+			img {
+				border-radius: 50%;
+				display: inline-block;
+				width:30px;
+			}
+
+			.isConnected {
+				position: absolute;
+				bottom: 5px;
+				left: 21px;
+				background-color: #20deaf;
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				border:1px solid #fff;
+			}
+
+			.picAnnouncer {
+				display: inline-block;
+			}
+
+			.nameAnnouncer {
+				display: inline-block;
+				padding-left:2px;
+
+				.name {
+					color:#a5a7af;
+					font-size:0.8em;
+				}
+
+				.agency {
+					text-transform: uppercase;
+					font-size: 11px;
+				}
+			}
+		}
+	}
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+.listTitle {
+	color: $purple;
+	position: relative;
+    text-align: center;
+    width: 215px;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 10px;
+
+	&:before, &:after {
+		content: "";
+		width: 15px;
+		display: block;
+		height: 2px;
+		background-color: $purple;
+		top: 20px;
+		position: absolute;
+	}
+
+	&:before {
+		left: 0;
+	}
+
+	&:after {
+		right: 0;
+	}
+}
+
+
+
+.listPage {
+
+	.listLikes {
+		font-size:1.3em;
+		text-align:center;
+	}
+}
+
+.not-likes {
+	font-family: $avenirMedium;
+
+	button {
+
+		&.properties {
+            width: 220px;
+            font-size: 1em;
+            border-radius: 30px;
+            float: none;
+            font-family: "Avenir LT Std 35 Light";
+            margin:50px auto 0 auto;
+            height:50px;
+			background-color: #20deaf;
+			
+
+			a {
+				text-decoration: none;
+				color:#fff;
+			}			
+		}
+	}
+}
+}
+
+
+
+.list {
+	.list_elements {
+
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 50px;
+		align-items: center;
+
+		.element {
+			display: inline-block;
+			background-color: #fff;
+			max-width: 500px;
+			width: 98%;
+			height: 180px;
+			margin: 0 10px;
+			margin-top: 20px;
+			-webkit-box-shadow: 1px 1px 3px 0px #656565;
+			box-shadow: 1px 1px 3px 0px #656565;
+			height: 180px;
+			text-decoration:none;
+			color:inherit;
+			display:flex;
+			justify-content: flex-end;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			a {
+				
+			}
+
+			img {
+				&.pictureAppartment {
+					width: 171px;
+					height:100%;
+				}
+			}
+
+			.element_data {
+				position: relative;
+				padding: 20px;
+				width: 50%;
+				display: inline-block;
+				font-family: $avenirMedium;
+
+				.city {
+					font-weight: 600;
+				}
+
+				.propertyType {
+					font-weight: 600;
+				}
+
+				.nbRooms {
+					font-weight: 600;
+					padding: 5px 0;
+				}
+
+				.price {
+					color:#20deaf;
+					font-size: 1.2em
+				}
+			}
+
+			.bottom {
+				display: block;
+
+				.delete {
+					display:inline-block;
+					color:#7c808d;
+					font-family: $avenirLight;
+
+					span {
+						display: inline-block;
+						vertical-align: top;
+						margin-top: 15px;
+					}
+				}
+
+				.comments {
+					display: inline-block;
+					margin:auto 10px;
+					color:#7c808d;
+					font-family: $avenirLight;
+
+					span {
+						display: inline-block;
+						vertical-align: top;
+						margin-top: 15px;
+					}
+				}
+			}
+
+			.announceur {
+				position: relative;
+
+				img {
+					border-radius: 50%;
+					display: inline-block;
+					width:30px;
+				}
+
+				.isConnected {
+					position: absolute;
+					bottom: 5px;
+					left: 21px;
+					background-color: #20deaf;
+					width: 12px;
+					height: 12px;
+					border-radius: 50%;
+					border:1px solid #fff;
+				}
+
+				.picAnnouncer {
+					display: inline-block;
+				}
+
+				.nameAnnouncer {
+					display: inline-block;
+					padding-left:2px;
+
+					.name {
+						color:#a5a7af;
+						font-size:0.8em;
+					}
+
+					.agency {
+						text-transform: uppercase;
+						font-size: 11px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+.listTitle {
+	color: $purple;
+	position: relative;
+    text-align: center;
+    width: 215px;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 10px;
+
+	&:before, &:after {
+		content: "";
+		width: 15px;
+		display: block;
+		height: 2px;
+		background-color: $purple;
+		top: 20px;
+		position: absolute;
+	}
+
+	&:before {
+		left: 0;
+	}
+
+	&:after {
+		right: 0;
+	}
+}

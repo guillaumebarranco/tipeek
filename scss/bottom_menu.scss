@@ -1,0 +1,21 @@
+bottom-menu {
+	border-top: solid 1px grey;
+	position: fixed;
+    bottom: 0;
+    display: block;
+    z-index: 500;
+    // left: 40%;
+	background-color: #fff;
+}
+
+.bottomMenu {
+	width: 100vw;
+	justify-content: space-between;
+	padding: 10px 20px 0 20px;
+	align-items: center;
+	display: flex;
+
+	.active {
+
+	}
+}

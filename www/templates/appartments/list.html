@@ -1,0 +1,56 @@
+<ion-view>
+	<ion-content class="list">
+
+		<div class="topMenu">
+			
+			<ul>
+				<li ng-click="updateHomeTop('list')" ng-class="getHomeTopClass('list')">Biens</li>
+				<li class="separator"></li>
+				<li ng-click="updateHomeTop('map')" ng-class="getHomeTopClass('map')">Carte</li>
+			</ul>
+
+			<a class="menuFilter" ng-click="updateHomeTop('filtersList')"><img src="img/iconFilter.png" alt="" width="10px"></a>
+		</div>
+
+		<div ng-if="elements[0]" class="listPage bgBody">
+			<h2 class="listTitle">Aujourd'hui</h2>
+
+			<ul class="list_elements flex-center">
+
+				<li ng-repeat="element in elements" class="element">
+					<a href="#/view?id={{element._id}}"><img class="pictureAppartment" check-image ng-src="element.pictures[0].src" alt=""></a>
+
+					<div class="element_data">
+						<div class="like" ng-click="likeAppartment(element.id)"></div>
+
+						<div class="city">{{element.localisation.city}} <span class="zipcode">({{element.localisation.zipcode}})</span></div>
+						<div class="propertyType">{{element.propertyType}} <span class="homeType">{{element.homeType}}</span></div>
+						<div class="nbRooms">{{element.nbRooms}} pièce, <span class="surface">{{element.surface}} m²</span></div>
+						<div class="price">{{element.price}} €</div>
+
+						<div class="announceur">
+
+							<div class="picAnnouncer">
+								<img src="img/perry.png" width="40" alt="">
+								<div class="isConnected"></div>
+							</div>
+
+							<div class="nameAnnouncer">
+								<div class="name">Gilles</div>
+								<div class="agency">Century 21</div>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div ng-if="!elements[0]" class="listPage bgBody" style="text-align:center;">
+
+			Aucun appartement ne correspond à votre recherche à l'heure actuelle
+			<br /><br />
+			<a href="#/properties-client">Vous pouvez modifier votre recherche</a>
+		</div>
+
+	</ion-content>
+</ion-view>

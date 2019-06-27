@@ -1,0 +1,27 @@
+<ion-view view-title="Account">
+	<ion-content ng-if="demo == true" scroll="false">
+		<ion-slides  options="options" slider="data.slider">
+
+			<ion-slide-page>
+				<div class="box blue" style="background-color: blue; height: 100%;"><p>BLUE</p></div>
+			</ion-slide-page>
+
+			<ion-slide-page>
+				<div class="box yellow" style="background-color: yellow; height: 100%;"><p>YELLOW</p></div>
+			</ion-slide-page>
+
+			<ion-slide-page>
+				<div class="box pink" style="background-color: pink; height: 100%;">
+					<p>PINK</p>
+					<button ng-click="hideDemo()">Hide demo</button>
+				</div>
+			</ion-slide-page>
+
+		</ion-slides>
+	</ion-content>
+
+	<ion-content ng-if="demo == true">
+		You are blocked on index page, something isn't right...
+	</ion-content>
+
+</ion-view>

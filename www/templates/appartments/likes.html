@@ -1,0 +1,52 @@
+<ion-view>
+	<ion-content class="likes">
+
+		<div class="bar bar-header bar-light">
+			<h1 class="title">Les likes !</h1>
+		</div>
+
+			<div ng-if="elements[0]" class="listPage bgBody">
+				<ul class="list_elementsLike flex-center">
+			
+					<li ng-repeat="element in elements" class="element">
+						<div>
+							<img class="pictureAppartment" check-image ng-src="element.pictures[0].src" alt="">
+
+							<div class="element_data">
+
+								<div class="city">{{element.localisation.city}} <span class="zipcode">({{element.localisation.zipcode}})</span></div>
+								<div class="propertyType">{{element.propertyType}} <span class="homeType">{{element.homeType}}</span></div>
+								<div class="nbRooms">{{element.nbRooms}} pièce <span class="surface">{{element.surface}} m²</span></div>
+								<div class="price">{{element.price}} €</div>
+
+								<div class="announceur">
+								</div>
+							</div>
+						</div>
+						<div class="bottom">
+
+							<div class="delete">
+								<img src="../../img/icons/Planche-Icones-3-71.png" width="50"/>
+								<span>Supprimer</span>
+							</div>
+
+							<div class="comments">
+								<img src="../../img/icons/Planche-Icones-3-72.png" width="50"/>
+								<span>Commentaires {{ nb.commentaires }}</span>
+							</div>	
+						</div>					
+					</li>
+				</ul>
+			</div>
+
+		<div class="not-likes padding">
+			<div ng-if="!elements[0]" style="padding-top: 100px; text-align:center;">
+				Vous n'avez liké aucun bien jusqu'à maintenant, il n'est jamais trop tard pour commencer !
+				<br /><br />
+				<button class="properties"><a href="#/connected">Liste des appartements</a></button>
+			</div>
+		</div>
+
+		<bottom-menu></bottom-menu>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,102 @@
+.profile_page {
+	background-color:#2c89e0;
+	text-align: center;
+	color: #fff;
+
+		h1, h2, h3, h4 {
+			color: #fff;
+			font-family: $avenirLight;
+		}
+
+		h2 {
+			margin-bottom: 50px;
+		}
+
+		.address {
+			font-family:$avenirLight;
+		}
+
+		.name {
+			font-family:$avenirLight;
+
+		}
+
+		.work {
+			font-family:$avenirLight;
+
+		}
+
+		.profile_picture {
+			position: relative;
+			max-width: 150px;
+			margin: 0 auto;
+
+			img {
+				width: 80%;
+				border-radius: 50%;
+				border:5px solid #fff;
+			}
+
+			$connected_width: 20px;
+
+			.connected {
+			    bottom: 7px;
+			    right: 31px;
+				width: $connected_width;
+				height: $connected_width;
+				background-color: #20deaf;
+				position: absolute;
+				border-radius: 50%;
+				border:1px solid #fff;
+			}
+		}
+
+		.announce {
+			margin-top: 40px;
+			font-family: $avenirLight;
+		}
+
+		$icon_profile: 100px;
+
+		.icon-profile {
+			width: $icon-profile;
+			height: $icon-profile;
+			background-color: #fff;
+			border-radius: 50%;
+		}
+
+		.contacts {
+			margin-top: 50px;
+			display: flex;
+			justify-content: center;
+			font-family: $avenirLight;
+
+			li {
+				margin-left: 20px;
+
+				&:first-child {
+					margin-left: 0;
+				}
+
+				img {
+					width:50px;
+				}
+
+				span {
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		.closeProfile {
+			a {
+				position: absolute;
+				bottom: 20px;
+				left: 46%;
+				color:#fff;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-family: $avenirMedium;
+			}
+		}
+	}

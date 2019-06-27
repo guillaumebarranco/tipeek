@@ -1,0 +1,19 @@
+ul {
+
+    .only {
+        font-size: 1.2em;
+        margin: 20px auto;
+        font-weight: 200;
+        border-bottom: 1px solid #d1d1d1;
+        padding-bottom: 20px;
+
+        a{
+            text-decoration: none;
+            color:#000;
+        }   
+
+        i.ion-ios-arrow-right {
+            float: right;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<ion-view>
+	<ion-content class="menu-client">
+
+		<div id="mainMenuClient">
+
+			<h1>{{$scope.user.name}}</h1>
+
+			<div id="img"><img ng-src="{{$scope.user.picture}}" alt=""></div>
+
+			<nav class="navigation">
+				<ul>
+					<li>
+						<a href="#/properties-client"><span>Ma recherche</span></a>
+					</li>
+					<li>
+						<a href="#/messages-client"><span> Mes messages</span></a>
+					</li>
+					<li>
+						<a href="#/likes"><span>Les likés ! </span></a>
+					</li>
+					<li>
+						<a href="#/settings-client"><span>Paramètres</span></a>
+					</li>
+					<li>
+						<a href="#/share"><span>Partagez l'application</span></a>
+					</li>
+					<li>
+						<a href="#/about"><span>A propos de Tipeek</span></a>
+					</li>
+					<li>
+						<p ng-click="reinitUser()">Réinitialiser mon compte</p>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<bottom-menu></bottom-menu>
+
+	</ion-content>
+</ion-view>

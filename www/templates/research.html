@@ -1,0 +1,207 @@
+<ion-view>
+	
+	<!-- Research Type -->
+	<ion-content ng-show="currentScreen === 1" class="padding tipeek_screen_path_appartment">
+
+		<div class="bar bar-header bar-balanced">
+			<h1 class="title">Type de recherche</h1>
+		</div>
+
+		<p ng-show="error" class="formErrorResearch">Vous devez choisir un type de recherche</p>
+
+		<div class="style_input_path_appartment">
+
+				<div class="inputStyle">
+					<input id="achat" type="checkbox" name="searchType" value="Achat" ng-model="userClient.search.searchType['achat']">
+					<label class="labelValid" for="achat"><span><i class="ion-android-done"></i></span>Achat</label>
+				</div>
+
+				<div class="inputStyle">
+					<input id="location" type="checkbox" name="searchType" value="Location" ng-model="userClient.search.searchType['location']">
+					<label class="labelValid" for="location"><span><i class="ion-android-done"></i></span>Location</label>
+				</div>
+
+			<button class="validSearchAppartment" ng-click="registerUserSearch('searchType')"><i class="ion-android-done"></i></button>
+		</div>
+	</ion-content>
+
+	<!-- Home Type -->
+	<ion-content ng-show="currentScreen === 2" class="padding tipeek_screen_path_appartment">
+
+		<div class="bar bar-header bar-balanced">
+			<h1 class="title">Type de bien</h1>
+		</div>
+
+		<p ng-show="error" class="formErrorResearch">Vous devez choisir un type de bien</p>
+
+		<div class="style_input_path_appartment">
+
+				<div class="inputStyle">
+					<input id="home" type="checkbox" name="homeType" value="Maison" ng-model="user.search.homeType['home']">
+					<label class="labelValid" for="home"><span><i class="ion-android-done"></i></span>Maison</label>
+				</div>
+
+				<div class="inputStyle">
+					<input id="appartment" type="checkbox" name="homeType" value="Appartement" ng-model="user.search.homeType['appartment']">
+					<label class="labelValid" for="appartment"><span><i class="ion-android-done"></i></span>Appartement</label>
+				</div>
+
+				<div class="inputStyle">
+					<input id="loft" type="checkbox" name="homeType" value="Loft" ng-model="user.search.homeType['loft']">
+					<label class="labelValid" for="loft"><span><i class="ion-android-done"></i></span>Loft/Atelier/Surface</label>
+				</div>
+
+				<div class="inputStyle">
+					<input id="local" type="checkbox" name="homeType" value="Local" ng-model="user.search.homeType['local']">
+					<label class="labelValid" for="local"><span><i class="ion-android-done"></i></span>Local commercial</label>
+				</div>
+
+				<div class="inputStyle">
+					<input id="desk" type="checkbox" name="homeType" value="Bureau" ng-model="user.search.homeType['desk']">
+					<label class="labelValid" for="desk"><span><i class="ion-android-done"></i></span>Bureau(x)</label>
+				</div>
+
+				<div class="inputStyle">
+					<input id="parking" type="checkbox" name="homeType" value="Parking" ng-model="user.search.homeType['parking']">
+					<label class="labelValid" for="parking"><span><i class="ion-android-done"></i></span>Parking/Box</label>
+				</div>
+
+				<div class="inputStyle">
+					<input id="site" type="checkbox" name="homeType" value="Terrain" ng-model="user.search.homeType['site']">
+					<label class="labelValid" for="site"><span><i class="ion-android-done"></i></span>Terrain</label>
+				</div>
+
+				<div class="inputStyle">
+					<input id="castle" type="checkbox" name="homeType" value="Château" ng-model="user.search.homeType['castle']">
+					<label class="labelValid" for="castle"><span><i class="ion-android-done"></i></span>Château, Hôtel particulier</label>
+				</div>
+
+				<div class="inputStyle">
+					<input id="other" type="checkbox" name="homeType" value="Autres" ng-model="user.search.homeType['other']">
+					<label class="labelValid" for="other"><span><i class="ion-android-done"></i></span>Autres...</label>
+				</div>
+
+			<button class="backAppartment" ng-click="back()"><i class="ion-ios-arrow-left"></i></button>
+			<button class="validSearchAppartment" ng-click="registerUserSearch('homeType')"><i class="ion-android-done"></i></button>
+		</div>
+	</ion-content>
+	
+	<!-- Surface -->
+	<ion-content ng-show="currentScreen === 3" class="padding tipeek_screen_path_appartment">
+
+		<div class="bar bar-header bar-balanced">
+			<h1 class="title">Surface</h1>
+		</div>
+
+		<p ng-show="error" class="formErrorResearch">Vous devez indiquer une surface supérieure à 0</p>
+
+		<div class="list style_input_path_appartment">
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Surface min</span>
+				<input type="number" placeholder="Entrez la surface minimum" ng-model="user.search.surfaceMin" ng-change="handleChangingSurface()">
+			</label>
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Surface max</span>
+				<input type="number" placeholder="Entrez la surface maximum" min="{{user.search.surfaceMin+1}}" ng-model="user.search.surfaceMax">
+			</label>
+
+			<button class="backAppartment" ng-click="back()"><i class="ion-ios-arrow-left"></i></button>
+			<button class="validSearchAppartment" ng-click="registerUserSearch('surface')"><i class="ion-android-done"></i></button>
+		</div>
+	</ion-content>
+	
+	<!-- Number of rooms -->
+	<ion-content ng-show="currentScreen === 4" class="padding tipeek_screen_path_appartment">
+		
+		<div class="bar bar-header bar-balanced">
+			<h1 class="title">Nombre de pièces</h1>
+		</div>
+
+		<p ng-show="error" class="formErrorResearch">Vous devez indiquer un nombre de pièces supérieur à 0</p>
+
+		<div class="list style_input_path_appartment">
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Pièce(s)</span>
+				<input type="number" placeholder="Nombre de pièces" ng-model="user.search.nbRooms" ng-change="handleChangingNumberRooms()">
+			</label>
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Chambre(s)</span>
+				<input type="number" placeholder="Nombre de chambres" max="{{user.search.nbRooms-1}}" ng-model="user.search.nbChambers">
+			</label>
+
+			<button class="backAppartment" ng-click="back()"><i class="ion-ios-arrow-left"></i></button>
+			<button class="validSearchAppartment" ng-click="registerUserSearch('rooms')"><i class="ion-android-done"></i></button>
+		</div>
+	</ion-content>
+	
+	<!-- Budget -->
+	<ion-content ng-show="currentScreen === 5" class="padding tipeek_screen_path_appartment">
+
+		<div class="bar bar-header bar-balanced">
+			<h1 class="title">Votre Budget</h1>
+		</div>
+
+		<p ng-show="error" class="formErrorResearch">Vous devez indiquer un budget supérieur à 0</p>
+
+		<div class="list style_input_path_appartment">
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Budget min</span>
+				<input type="number" placeholder="Entrez la surface minimum" ng-model="user.search.budgetMin" ng-change="handleChangingBudget()">
+			</label>
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Budget max</span>
+				<input type="number" placeholder="Entrez la surface maximum" min="{{user.search.budgetMin+1}}" ng-model="user.search.budgetMax">
+			</label>
+
+			<button class="backAppartment" ng-click="back()"><i class="ion-ios-arrow-left"></i></button>
+			<button class="validSearchAppartment" ng-click="registerUserSearch('budget')"><i class="ion-android-done"></i></button>
+		</div>
+	</ion-content>
+	
+	<!-- Recap -->
+	<ion-content ng-show="currentScreen === 6" class="padding tipeek_screen_path_appartment">
+	
+		<div class="bar bar-header bar-balanced">
+			<h1 class="title">Récapitulatif</h1>
+		</div>
+
+		<div class="list style_input_path_appartment recap">
+
+			<div class="inputStyle">
+				<label for="searchType">{{user.search.searchType}}</label>
+				<div class="buttonEdit" ng-click="updateStep(1)"><i class="ion-chevron-right"></i></div>
+			</div>
+
+			<div class="inputStyle">
+				<!-- <p virgulize-object>{{ user.search.homeType }}</p> -->
+				<label for="homeType" virgulize-object value="{{user.search.homeType}}"></label>
+				<div class="buttonEdit" ng-click="updateStep(2)"><i class="ion-chevron-right"></i></div>
+			</div>
+
+			<div class="inputStyle">
+				<label for="surface">{{user.search.surfaceMin}} m² min, {{user.search.surfaceMax}} m² max</label>
+				<div class="buttonEdit" ng-click="updateStep(3)"><i class="ion-chevron-right"></i></div>
+			</div>
+
+			<div class="inputStyle">
+				<label for="nbRooms">{{user.search.nbRooms}}  pièces, {{user.search.nbChambers}} chambres</label>
+				<div class="buttonEdit" ng-click="updateStep(4)"><i class="ion-chevron-right"></i></div>
+			</div>
+
+			<div class="inputStyle">
+				<label for="budget">{{user.search.budgetMax}} € max</label>
+				<div class="buttonEdit" ng-click="updateStep(5)"><i class="ion-chevron-right"></i></div>
+			</div>
+
+			<button class="backAppartment" ng-click="back()"><i class="ion-ios-arrow-left"></i></button>
+			<button class="validSearchAppartment" ng-click="registerUserSearch('end')"><i class="ion-android-done"></i></button>
+		</div>
+	</ion-content>
+
+</ion-view>

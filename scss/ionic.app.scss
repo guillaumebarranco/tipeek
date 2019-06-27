@@ -1,0 +1,142 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+@font-face {
+font-family: 'Avenir LT Std 95 Black';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 95 Black'), url('../lib/ionic/fonts/AvenirLTStd-Black.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 45 Book';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 45 Book'), url('../lib/ionic/fonts/AvenirLTStd-Book.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 85 Heavy';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 85 Heavy'), url('../lib/ionic/fonts/AvenirLTStd-Heavy.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 35 Light';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 35 Light'), url('../lib/ionic/fonts/AvenirLTStd-Light.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 65 Medium';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 65 Medium'), url('../lib/ionic/fonts/AvenirLTStd-Medium.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 55 Roman';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 55 Roman'), url('../lib/ionic/fonts/AvenirLTStd-Roman.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 95 Black Oblique';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 95 Black Oblique'), url('../lib/ionic/fonts/AvenirLTStd-BlackOblique.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 45 Book Oblique';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 45 Book Oblique'), url('../lib/ionic/fonts/AvenirLTStd-BookOblique.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 85 Heavy Oblique';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 85 Heavy Oblique'), url('../lib/ionic/fonts/AvenirLTStd-HeavyOblique.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 35 Light Oblique';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 35 Light Oblique'), url('../lib/ionic/fonts/AvenirLTStd-LightOblique.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 65 Medium Oblique';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 65 Medium Oblique'), url('../lib/ionic/fonts/AvenirLTStd-MediumOblique.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Avenir LT Std 55 Oblique';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir LT Std 55 Oblique'), url('../lib/ionic/fonts/AvenirLTStd-Oblique.woff') format('woff');
+}
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+$purple: #995ddd;
+$bgGrey: #f8f8f8;
+$green: #1ED3A6;
+
+$avenirLight: 'Avenir LT Std 35 Light';
+$avenirMedium : 'Avenir LT Std 65 Medium';
+$avenirBold : 'Avenir LT Std 85 Heavy';
+$avenirBlack: 'Avenir LT Std 95 Black';
+
+
+@import "scss/global";
+@import "scss/register";
+@import "scss/process_appartment";
+@import "scss/likes_appartments";
+@import "scss/details_appartments";
+@import "scss/profile";
+@import "scss/filter_menu";
+@import "scss/lateral_menu";
+@import "scss/buttons";
+@import "scss/bottom_menu";
+@import "scss/top_menu";
+@import "scss/map";
+@import "scss/comments";
+@import "scss/messages";
+

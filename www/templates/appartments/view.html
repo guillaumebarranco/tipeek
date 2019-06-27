@@ -1,0 +1,60 @@
+<ion-view>
+
+	<ion-content class="view_good">
+	<div class="bar bar-header bar-light">
+		<button class="back-connected"><a href="#/connected"><i class="ion-ios-arrow-left"></i></a></button>
+	</div>
+		<div ng-if="error">
+
+			<h1>An error occured</h1>
+
+			<a href="#/list">Return to list</a>
+		</div>
+
+		<div class="infosAppartment" ng-if="!error">
+			<img check-image ng-src="{{element.src}}" alt="">
+
+			<div class="like" ng-click="likeAppartment(element._id)"></div>
+
+			<div class="wrapper">
+
+				<div class="price">{{element.price}} €</div>
+				<div class="infos">{{element.propertyType}}, {{element.localisation.city}} <span class="zipcode">({{element.localisation.zipcode}})</span></div>
+				<div class="infos">{{element.homeType}} {{element.nbRooms}} pièces, <span class="surface">{{element.surface}} m²</span></div>
+
+				<div class="descript">
+					<h5 class="uppcs">Description</h5>
+					<p class="description">{{element.description}}</p>
+				</div>
+
+				<div class="map"></div>
+
+				<div class="details"><a href="#/view-details"> + de détails</a></div>
+
+			</div>
+
+		</div>
+
+		<div class="map">
+		</div>
+
+	</ion-content>
+
+	<ion-footer-bar>
+		<div class="announcer">
+
+			<div id="announcerIcon">
+				<img src="img/perry.png" width="40" alt="">
+				<div class="isConnected"></div>
+			</div>
+
+			<div id="announcerName">
+				<div class="name">Gilles</div>
+				<div class="agency">Century 21</div>
+			</div>
+		</div>	
+		<div id="contact-clientView">
+			<a href="#/profile?toId={{creator}}"><span>Contact</span></a>
+		</div>		
+	</ion-footer-bar>
+</ion-view>

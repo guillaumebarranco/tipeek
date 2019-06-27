@@ -1,0 +1,33 @@
+ion-view {
+	width: 100%;
+	// max-width: 340px;
+	margin: 0 auto;
+
+	  .scroll {
+		transform:none!important;
+	} 
+}
+
+.bar.bar-balanced {
+	background-color: #20deaf;
+	border:none;
+}
+
+.bar.bar-light {
+	opacity:0.6;
+}
+
+.bar.bar-footer {
+	padding: 0;
+	height:51px;
+}
+
+
+[nav-view-transition=ios][nav-view-direction=forward], [nav-view-transition=ios][nav-view-direction=back] {
+	background-color: white;
+}
+
+
+.item-floating-label {
+	border: none;
+}

@@ -1,0 +1,131 @@
+#mapid {
+	height: 90vh;
+}
+.popin {
+	height: 550px;
+	animation: upThis 0.4s linear;
+	position: fixed;
+    background: $green;
+    bottom: 0;
+    transition: 0.4s;
+    padding: 20px;
+    z-index: 1000;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+
+    .popin-work {
+    	width: 80%;
+	    max-width: 400px;
+	    margin: 0 auto;
+
+		h3 {
+			font-family: $avenirBold;
+		}
+
+	    .text  {
+	    	color:#008462;
+			font-family: $avenirBold;
+			margin: 0 auto 20px auto;
+	    }
+		.styleCheckbox {
+			font-family: $avenirLight;
+		}
+
+		p {
+			&.labelList {
+				font-family: $avenirLight;
+			}
+		}
+
+		select {
+			font-family: $avenirLight;
+		}
+
+    }
+
+    h2, h3 {
+    	color: #008462;
+    	text-align: center;
+    }
+
+@-webkit-keyframes upThis {
+		0% {
+			height: 0;
+		}
+
+		100% {
+			height: 400px;
+		}
+	}
+}
+
+.iconMapGood {
+	background:$green;
+	color: #fff;
+	padding: 6px;
+	width: 100px;
+	border-radius: 6px;
+	text-align: center;
+	font-family: $avenirLight;
+	font-size:1.5em;
+}
+
+
+	.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-top: 20px solid $green;
+	margin-left:30px;
+	margin-top:-8px;
+	}
+
+.menuSpot, .menuFilter {
+	position: absolute;
+	top: 0;
+}
+
+.menuSpot {
+	right: 30px;
+	top:5px;
+
+	img {
+		width:65%;
+	}
+}
+
+$userSpot: 50px;
+
+.userSpot {
+
+	width: $userSpot;
+    position: relative;
+    top: -$userSpot/2;
+    left: -$userSpot/2;
+
+    span {
+    	display: none;
+    	width: 100px;
+    	position: absolute;
+    	text-align: center;
+    	border-radius: 6px;
+    	left: -$userSpot/2;
+    	top: -$userSpot/2;
+    	background-color: #000;
+    	color: #fff;
+    }
+
+    &:hover span {
+    	display: block;
+    }
+
+    img {
+    	width: 100%;
+    	height: 100%;
+    	border-radius: 50%;
+    }
+}

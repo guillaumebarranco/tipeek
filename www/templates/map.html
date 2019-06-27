@@ -1,0 +1,58 @@
+<ion-view>
+
+	<ion-content>
+
+		<div class="topMenu">
+
+			<ul>
+				<li ng-click="updateHomeTop('list')" ng-class="getHomeTopClass('list')">Biens</li>
+				<li class="separator"></li>
+				<li ng-click="updateHomeTop('map')" ng-class="getHomeTopClass('map')">Carte</li>
+			</ul>
+
+			<a class="menuSpot" ng-class="getCurrentClass('edit')"><img src="img/icon3.png" alt="" width="30px"></a>
+			<a class="menuFilter"><img src="img/iconFilter.png" alt="" width="10px"></a>
+		</div>
+
+		<div class="map">
+			<div id="mapid"></div>
+		</div>
+
+		<div class="popin" ng-if="popInShow">
+
+			<div class="popin-work" ng-show="popInWork">
+				<h3>On a une question,</h3>
+
+				<p class="text">
+					On dirait que vous passez beaucoup de vos journées à cet endroit. <br />
+					Serait-ce votre lieu de travail ?
+				</p>
+
+				<div class="styleCheckbox">
+					<input id="input2" type="radio" ng-model="popInValue" name="radioWork" ng-value="2" ng-change="changePopInValue('2')">
+					<label class="labelRadio" for="input2">Oui c'est mon lieu de travail</label>
+				</div>
+
+				<div class="styleCheckbox">
+					<input id="input1" type="radio" ng-model="popInValue" name="radioWork" ng-value="1" ng-change="changePopInValue('1')">
+					<label class="labelRadio" for="input1">Pas du tout, mais j'y passe beaucoup de temps</label>
+				</div>
+
+				<div ng-show="popInValue == 1">
+					<p class="labelList">Choisissez le type de spot que vous voulez enregistrer.</p>
+					<select ng-model="waitingSpot.name">
+						<div class="listSpot"><option ng-repeat="spot in spotList">{{spot.name}}</option></div>
+					</select>
+				</div>
+
+				<div class="styleCheckbox">
+					<input id="input0" type="radio" ng-model="popInValue" name="radioWork" ng-value="0" ng-change="changePopInValue('0')">
+					<label class="labelRadio" for="input0">Cela ne vous regarde pas</label>
+				</div>
+
+				<button ng-click="resultPopIn('work')" class="valid"><i class="ion-android-done"></i></button>
+			</div>
+
+		</div>
+	</ion-content>
+</ion-view>

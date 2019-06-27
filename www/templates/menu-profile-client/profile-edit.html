@@ -1,0 +1,33 @@
+<ion-view>
+	<ion-content class="padding profile-edit">
+		<div class="bar bar-header bar-balanced">
+			<button class="back-menu"><a href="#/menu-client"><i class="ion-ios-arrow-left"></i></a></button>
+			<h1 class="title">Mon profil</h1>
+		</div>
+		<div class="avatar">
+			<img src="img/adam.jpg" alt="">
+			<div class="addAvatar" ng-click="">Ajouter une photo</div>
+		</div>
+
+		<form class="infosProfile">
+				<label for="completeName">Nom complet</label>
+				<input type="text">
+
+				<label for="number">Téléphone</label>
+				<input type="text">
+
+				<label for="birthdayDate">Date d'anniversaire</label>
+				<input type="text">
+
+				<label for="addFriends">Vos amis</label>
+				<button class="addFriends" ng-click=""><i class="ion-ios-arrow-right"></i></button>
+				<div class="addFriends">Ajouter les amis qui cherchent avec vous</div>
+				
+			<div class="signoff">
+				<img src="../img/icons/Planche-Icones-3-61.png" alt="" width="30">
+				<span ng-click="">Me déconnecter</span>
+			</div>
+		</form>
+			<div class="deleteAccount" ng-click="">Supprimer mon compte</div>
+	</ion-content>
+</ion-view>

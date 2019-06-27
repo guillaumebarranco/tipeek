@@ -1,0 +1,100 @@
+.comment {
+
+    h1 {
+        &.title {
+            color:#000!important;
+            font-family: $avenirLight;
+        }
+    }
+
+    img {
+        border-radius: 50px;
+        position:absolute;
+        top: 0;
+    }
+
+    li {
+        position: relative;
+    }
+
+    p {
+        position: relative;
+        top: 4px;
+        width: 150px;
+        padding: 5px 10px;
+        border-radius:10px;
+    }
+
+    .emitterMessages {
+        align-self: flex-end;
+        color:#fff;
+        margin: 5px 50px;
+        height:auto;
+        font-family: $avenirLight;
+
+        p {
+            background-color: $green;
+        }
+
+        img {
+            right: -40px;
+        }
+
+        // &:after {
+        //     content:"\2022";
+        //     color:$green;
+        //     font-size: 5em;
+        //     position: absolute;
+        //     right:14%;
+        // }
+
+        // &:before {
+        //     content:"\2022";
+        //     color:$green;
+        //     font-size: 3em;
+        //     position: absolute;
+        //     right:8%;
+        // }
+    }
+
+    .recipientMessages {
+        color:#000;
+        margin: 5px 50px;
+        height:auto;
+        font-family: $avenirLight;
+
+        p {
+            background-color: #f2f2f2;
+        }
+
+        // &:after {
+        //     content:"\2022";
+        //     color:#f2f2f2;
+        //     font-size: 5em;
+        //     position: absolute;
+        //     left:14%;
+        // }
+
+        img {
+            left: -45px;
+        }
+
+        // &:before {
+        //     content:"\2022";
+        //     color:#f2f2f2;
+        //     font-size: 3em;
+        //     position: absolute;
+        //     left:8%;
+        // }
+    }
+}
+
+form {
+    &.infosProfile {
+
+        .send {
+            float: right;
+            width: 15%;
+        }
+    }
+}

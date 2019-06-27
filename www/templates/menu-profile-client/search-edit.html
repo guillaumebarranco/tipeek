@@ -1,0 +1,18 @@
+<ion-view>
+	<ion-content>
+		<div class="bar bar-header bar-balanced">
+			<button class=""><a href="#/menu-client"><i class="ion-ios-arrow-left"></i></a></button>
+			<h1 class="title">Mon projet</h1>
+		</div>
+		 <h5>Notifications</h5>
+
+		<hr>
+		<div class="criteria">
+			<div>{{userClient.search.searchType}}, {{userClient.search.homeType}}, {{userClient.search.surfaceMin}} m² min</div><br>
+			<div>{{userClient.search.nbRooms}}  pièces, {{userClient.search.nbChambers}} chambres</div><br>
+			<div>{{userClient.search.budgetMin}} € max</div>
+		</div>
+		<div>Supprimer</div>
+		<div>Modifier</div>
+	</ion-content>
+</ion-view>

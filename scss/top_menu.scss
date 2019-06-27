@@ -1,0 +1,29 @@
+.topMenu {
+	position: relative;
+	margin-top: 10px;
+	background-color: #fff;
+
+	ul {
+		display: flex;
+		justify-content: center;
+	}
+
+	li {
+		text-transform: uppercase;
+		font-size: 1em;
+		color: #7c808d;
+		padding: 12px 8px;
+		box-sizing: border-box;
+		border-bottom: solid 4px transparent;
+		font-family: $avenirLight;
+
+		&.active {
+			color: #20deaf;
+		    border-color: #20deaf;
+		}
+
+		&.separator {
+			width: 50px;
+		}
+	}
+}

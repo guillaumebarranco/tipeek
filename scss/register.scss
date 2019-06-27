@@ -1,0 +1,239 @@
+.tipeek_screen {
+	background-color: $green;
+	height: 100vh;
+
+	h2 {
+		color:#008462;
+		font-size: 1.2em;
+		text-align: center;
+		margin-top: 30px;
+		font-family: $avenirBold;
+
+	}
+
+	h5 {
+		color:#008462;
+		text-align: center;
+		font-family: $avenirBold;
+		line-height: 1.5;
+	}
+
+	button {
+		background-color: #FF7FEB;
+	    color: #fff;
+	    border: none;
+	    padding: 10px;
+	    width: 60px;
+	    display: block;
+	    margin: 10px auto;
+
+
+	    &.valid {
+	    	margin-top: 100px;
+			border-radius: 50%;
+			float: right;
+			font-size: 2em;
+
+			&.large {
+				width: 172px;
+				font-size: 1em;
+			    border-radius: 30px;
+			    float: none;
+				font-family: $avenirLight;
+			}
+	    }
+
+	    &.geoloc {
+	    	display: inline-block;
+	    	background-color: #1ED3A6;
+	    	color:#fff;
+	    	font-size:2em;
+	    }
+	}
+
+	button {
+
+		&.validSearch {
+			background-color: #fff;
+		    color: purple;
+		    border: 1px solid purple;
+		    padding: 10px;
+		    width: 60px;
+		    display: block;
+			border-radius: 50%;
+			float: right;
+			font-size: 2em;
+			font-family: $avenirLight;
+		}
+
+		&.passStep {
+			background-color:transparent;
+			width:100%;
+			font-family: $avenirLight;
+		}
+	}
+
+	label {
+		border: none;
+		padding: 0;
+
+
+	}
+
+	.list.style_input {
+		// border-bottom: 1px solid #fff;
+
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		    color:    #fff;
+		}
+	}
+
+	.style_input {
+		max-width: 80%;
+		margin: 0 auto;
+		margin-top: 100px;
+		display: block;
+		font-family: $avenirLight;
+
+		.birthdayPlaceholder {
+			padding-left: 30px;
+			padding-top: 20px;
+		}
+	}
+
+	.inputStyle {
+
+		input[type="radio"] {
+			display: none;
+
+			&:checked {
+				position: absolute;
+				left: -9999px;
+
+				&+label {
+
+					&:before {
+						content: "\2022";
+						display: inline-block;
+						border-radius: 50px;
+						text-align: center;
+						font-size: 1.2em;
+						line-height: 1;
+					}
+				}
+			}
+		}
+
+		label {
+			color: #fff;
+			margin:30px auto;
+			font-size: 1.4em;
+			display: inline-block;
+			cursor: pointer;
+			position: relative;		
+
+
+			&:before {
+
+				content: "";
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				background-color: transparent;
+				border-radius:50px;
+				border: 1px solid #fff;
+				margin-right: 20px;
+			}
+		}
+	}
+
+	input {
+		color:#fff;
+		padding: 0;
+		border: none;
+		text-align: center;
+		font-size:1em;
+		border-radius: 50px;
+
+		&.background-field {
+			border-radius: 50px;
+			color:#fff;
+
+			&:focus {
+				background-color: transparent;
+				border-radius: 50px;
+				color:#fff;
+			}
+		}
+
+		&.waiting {
+			background-color: rgba(255, 255, 255, 0.3);
+			height: 55px;
+			font-family: $avenirLight;
+		}
+
+		&.error {
+			background-color: #ff2e64;
+		}
+	}
+
+	h5 {
+		color:#008462;
+	}
+
+	p {
+		color:#fff;
+		text-align: center;
+		font-family: $avenirBold;
+	}
+}
+
+.styleCheckbox {
+
+    input[type="radio"] {
+        display: none;
+
+        &:checked {
+            position: absolute;
+            left: -9999px;
+
+            &+label {
+
+                &:before {
+                    content: "\2022";
+                    display: inline-block;
+                    border-radius: 50px;
+                    text-align: center;
+                    font-size: 1.5em;
+                    line-height: 0.8;
+                    border-color:#fff;
+                }
+            }
+        }
+    }
+
+    label {
+        color: #fff;
+        margin:15px auto;
+        font-size: 1.2em;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+
+
+        &.labelRadio {
+
+            &:before {
+
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-color: transparent;
+                border-radius:50px;
+                border: 1px solid #fff;
+                margin-right: 20px;
+            }
+        }
+    }
+}

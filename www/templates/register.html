@@ -1,0 +1,271 @@
+<ion-view>
+
+	<!-- Name -->
+	<ion-content ng-show="currentScreen === 1" class="padding tipeek_screen">
+
+		<h2>Comment vous appelez-vous ?</h2>
+
+		<!-- <button class="button" ng-click="uploadProfilePicture()">Upload From Assets</button> -->
+
+		<div class="list style_input">
+
+			<label class="item item-input item-floating-label">
+				<input ng-class="checkError()" class="background-field" type="text" placeholder="..." ng-model="user.name">
+				<p ng-show="error" class="formErrorRegister">Veuillez entrer un nom</p>
+			</label>
+
+			<button ng-click="registerUserElement('name')" class="valid"><i class="ion-android-done"></i></button>
+		</div>
+	</ion-content>
+
+	<!-- Phone Number -->
+	<ion-content ng-show="currentScreen === 2" class="padding tipeek_screen">
+
+		<h2>Nous avons besoin de <br>votre numéro de téléphone</h2>
+		<h5>Pas d'email, mot de passe, confirmation... <br>Juste un numéro de téléphone. Simple, non ?!</h5>
+
+		<div class="list style_input">
+
+			<label class="item item-input item-floating-label">
+				<input ng-class="checkError()" class="background-field" type="text" maxlength="10" placeholder="..." ng-model="user.phone">
+				<p ng-show="error && !errorPhoneTaken" class="formErrorRegister">Veuillez entrer un numéro de téléphone correct</p>
+				<p ng-show="errorPhoneTaken" class="formErrorRegister">Ce numéro de téléphone est déjà utilisé par un autre compte. Veuillez entrer un autre numéro.</p>
+			</label>
+
+			<button ng-click="registerUserElement('phone')" class="valid"><i class="ion-android-done"></i></button>
+		</div>
+	</ion-content>
+
+	<!-- Search type -->
+	<ion-content ng-show="currentScreen === 3" class="padding tipeek_screen">
+
+		<h2>Que souhaitez-vous <br>faire sur Tipeek ?</h2>
+
+		<p ng-show="error" class="formErrorRegister">Veuillez choisir un parcours</p>
+
+		<div class="style_input">
+
+			<div class="inputStyle">
+				<input type="radio" id="client" name="type" value="client" ng-model="user.type" ng-checked="true"/>
+				<label for="client">Trouver un logement</label>		
+			</div>
+
+			<div class="inputStyle">
+				<input id="recherche" type="radio" name="type" value="announcer" ng-model="user.type">
+				<label for="recherche">Passer une annonce</label>		
+			</div>
+
+			<button ng-click="registerUserElement('type')" class="valid"><i class="ion-android-done"></i></button>
+		</div>
+	</ion-content>
+
+	<!-- Client path -->
+	<div ng-if="user.type === 'client'">
+
+		<!-- Birthday -->
+		<ion-content ng-show="currentScreen === 4" class="padding tipeek_screen">
+
+			<h2>Quelle est votre date de naissance ?</h2>
+
+			<h5>Nous avons besoin de savoir si vous êtes<br> en âge de prendre des décisions ;)</h5>
+
+			<div class="style_input">
+				
+				<label class="item item-input item-floating-label">
+					<!-- <span class="input-label">Birthday</span> -->
+					<input ng-class="checkError()" class="birthdayPlaceholder" type="date" placeholder="12/07/1990" ng-model="user.birthday">
+					<p ng-show="error && !errorAgeNotGood" class="formErrorRegister">Veuillez entrer une date de naissance</p>
+					<p ng-show="errorAgeNotGood" class="formErrorRegister">Vous n'avez pas l'âge requis pour créer une nouvelle recherche</p>
+				</label>
+
+				<button ng-click="registerUserElement('birthday')" class="valid"><i class="ion-android-done"></i></button>
+			</div>
+		</ion-content>
+
+		<!-- If found in research -->
+	
+		<ion-content ng-show="currentScreen === 5 && foundInResearch" class="padding tipeek_screen">
+
+			<h2>Vous avez été trouvé dans une recherche existante par {{ researchFoundCreator.name }}!</h2>
+			<h5>Acceptez-vous d'être rallié à cette recherche ?</h5>
+
+			<div class="list">
+				<button class="valid large" ng-click="registerUserElement('acceptResearch')">Accepter</button>
+				<button class="passStep" ng-click="registerUserElement('refuseResearch')">Refuser</button>
+			</div>
+		</ion-content>
+
+		<!-- Contacts -->
+		<ion-content ng-show="currentScreen === 5 && !foundInResearch" class="padding tipeek_screen">
+
+			<h2>Vous cherchez en solo,<br> en famille, ou en amis ?</h2>
+			<h5>C'est le moment de vous connecter à eux !</h5>
+
+			<div class="list">
+				<button class="valid large" ng-click="registerUserElement('showContacts')">Ajouter des amis</button>
+				<button class="passStep" ng-click="registerUserElement('passContacts')">Passer cette étape</button>
+			</div>
+		</ion-content>
+
+		<ion-content ng-show="currentScreen === 6" class="padding tipeek_screen_path_appartment">
+
+			<div class="bar bar-header bar-balanced">	
+				<h1 class="title">Ajouter des amis</h1>
+			</div>
+
+			<input type="search" placeholder="Rechercher" name="Rechercher" class="search" ng-model="searchContact">
+
+			<div class="list style_input_path_appartment contacts">	
+				<h5>Vos contacts</h5>
+
+				<div class="chooseContacts" ng-repeat="contact in contacts | filter:searchContact">
+
+					<div class="inputStyle">
+						<input id="contacts{{contact.id}}" name="contacts" type="checkbox" ng-model="currentContact" ng-change="changeFormContact(contact.name, contact.phone)" value="{{contact.name}}">
+
+						<label class="labelValid" for="contacts{{contact.id}}"><span><i class="ion-android-done"></i></span>{{contact.name}}</label>
+					</div>
+				</div>
+
+				<button class="backAppartment" ng-click="back()"><i class="ion-ios-arrow-left"></i></button>
+				<button class="validSearchAppartment" ng-click="registerUserElement('contacts')"><i class="ion-android-done"></i></button>
+			</div>
+		</ion-content>
+
+		<!-- Localisation -->
+		<ion-content ng-show="currentScreen === 7" class="padding tipeek_screen">
+
+			<h2>Où vous trouvez-vous ?</h2>
+			<h5>Notre mission est de vous proposer <br> des logements sur vos trajets quotidiens.<br> Sans votre localisation, ben...<br> ça marchera beaucoup moins ;)</h5>
+
+			<button class="valid large" ng-click="registerUserElement('geoloc')">Me localiser</button>
+			<button class="passStep" ng-click="registerUserElement('geoloc')">Passer cette étape</button>
+		</ion-content>
+
+		<ion-content ng-show="currentScreen === 8" class="padding tipeek_screen">
+
+			<h2>Uploader une photo</h2>
+
+			<!-- <img ng-src="{{user.picture}}" width="200" alt=""> -->
+
+			<button class="valid large" ng-click="registerUserElement('profile_picture')">Uploader une photo</button>
+			<button class="passStep" ng-click="registerUserElement('profile_picture_false')">Passer cette étape</button>
+		</ion-content>
+
+		<!-- End -->
+		<ion-content ng-show="currentScreen === 9" class="padding tipeek_screen">
+
+			<h2>C'est le moment de parler <br>de votre projet immobilier !</h2>
+
+			<button class="valid large" ng-click="registerUserElement('end')">C'est parti</button>
+			<button class="passStep" ng-click="registerUserElement('end')">Je ferai ça plus tard</button>
+
+		</ion-content>
+	</div>
+
+	<!-- Annonceur path -->
+	<div ng-if="user.type === 'announcer'">
+
+		<ion-content ng-show="currentScreen === 4" class="padding tipeek_screen">
+
+			<h2>Quel est votre profil ?</h2>
+
+			<p ng-show="error" class="formErrorRegister">Veuillez choisir un profil</p>
+
+			<div class="style_input">
+
+				<div class="inputStyle">
+					<input type="radio" id="particulier" name="typeuser" value="personal" ng-model="user.specific.typeAnnouncer" ng-checked="true" />
+					<label for="particulier">Particulier</label>		
+				</div>
+
+				<div class="inputStyle">
+					<input type="radio" id="agence" name="typeuser" value="agency" ng-model="user.specific.typeAnnouncer"/>
+					<label for="agence">Agence</label>		
+				</div>
+
+				<button ng-click="registerUserElement('typeAnnouncer')" class="valid"><i class="ion-android-done"></i></button>	
+			</div>
+		</ion-content>
+
+		<div ng-if="user.specific.typeAnnouncer === 'agency'">
+
+			<ion-content ng-show="currentScreen === 5" class="padding tipeek_screen">
+				<h2>Quel est la nom de votre agence ?</h2>
+
+				<p ng-show="error" class="formErrorRegister">Veuillez entrer un nom</p>
+
+				<div class="list style_input">
+
+					<label class="item item-input item-floating-label">
+						<input ng-class="checkError()" class="background-field" placeholder="..." type="text" ng-model="user.specific.agencyName">
+					</label>
+					<button ng-click="registerUserElement('agencyName')" class="valid"><i class="ion-android-done"></i></button>					
+					</div>
+			</ion-content>
+
+			<ion-content ng-show="currentScreen === 6" class="padding tipeek_screen_path_appartment">
+					
+				<div class="bar bar-header bar-balanced">
+					<h1 class="title">Localisation</h1>
+				</div>
+
+				<p ng-show="error" class="formErrorRegisterLocation">Veuillez entrer une adresse</p>
+
+				<div class="style_input_path_appartment">
+					<input class="locatAgency" id="localisation" type="address" name="localisation" value="localisation" ng-model="user.specific.agencyAddress" placeholder="Adresse de l'agence">
+
+					<button ng-click="registerUserElement('geoloc')" class="geolocAnnouncer"><i class="ion-pinpoint"></i></button>
+					<button class="valid largeLocat" ng-click="registerUserElement('checkGeoloc')">Vérifier sur la carte</button>
+					<button class="backAppartment" ng-click="back()"><i class="ion-ios-arrow-left"></i></button>
+					<button class="validSearchAppartment" ng-click="registerUserElement('agencyAddress')"><i class="ion-android-done"></i></button>
+				</div>
+
+			</ion-content>
+			<ion-content ng-show="currentScreen === 7" class="padding tipeek_screen">
+				<h2>Quel est votre email ?</h2>
+
+				<div class="list style_input">
+					<label class="item item-input item-floating-label">
+						<input ng-class="checkError()" class="background-field" type="teqext" ng-model="user.email" placeholder="...">
+						<p ng-show="error" class="formErrorRegister">Veuillez entrer un email</p>
+					</label>
+
+					<button ng-click="registerUserElement('email')" class="valid"><i class="ion-android-done"></i></button>					
+				</div>
+			</ion-content>
+
+			<!-- End -->
+			<ion-content ng-show="currentScreen === 8" class="padding tipeek_screen">
+
+				<h2>C'est le moment de passer votre annonce !</h2>
+
+				<button class="valid large" ng-click="registerUserElement('end')">C'est parti</button>
+				<button class="passStep" ng-click="registerUserElement('end')">Je ferai ça plus tard</button>
+
+			</ion-content>
+		</div>
+
+		<div ng-if="user.specific.typeAnnouncer === 'personal'">
+			<ion-content ng-show="currentScreen === 5" class="padding tipeek_screen">
+				<h2>Où vous trouvez-vous ?</h2>
+				<h5>Votre localisation permettra à vos clients de vous trouver plus facilement et de vous contacter pour une visite !</h5>
+	
+				<button class="valid large" ng-click="registerUserElement('end')" >Me localiser</button>
+
+				<button class="passStep" ng-click="registerUserElement('end')">Passer cette étape</button>		
+			</ion-content>
+
+			<!-- End -->
+			<ion-content ng-show="currentScreen === 6" class="padding tipeek_screen">
+
+				<h2>C'est le moment de passer votre annonce !</h2>
+
+				<button class="valid large" ng-click="registerUserElement('end')">C'est parti ! <ion-icon name="arrow-forward"></ion-icon></button>
+				<button class="passStep" ng-click="registerUserElement('end')">Je ferai ça plus tard</button>
+
+			</ion-content>
+		</div>
+	</div> 
+
+</ion-view>

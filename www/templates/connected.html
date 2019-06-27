@@ -1,0 +1,18 @@
+<ion-view>
+	<ion-content>
+
+		<ul class="topMenu flex-center">
+			<li ng-click="updateHomeTop('list')" ng-class="getHomeTopClass('list')">Biens</li>		
+			<li ng-click="updateHomeTop('map')" ng-class="getHomeTopClass('map')">Carte</li>
+			<li><a ng-click="updateHomeTop('filtersList')"><img src="img/iconFilter.png" alt="" width="10px"></a></li>
+		</ul>
+
+		<app-map ng-if="homeTop === 'map'"></app-map>
+		<app-list ng-if="homeTop === 'list'"></app-list>
+
+		<app-filters-list ng-if="homeTop === 'filtersList'"></app-filters-list>
+
+		<bottom-menu></bottom-menu>
+	</ion-content>
+
+</ion-view>

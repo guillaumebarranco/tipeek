@@ -1,0 +1,44 @@
+<ion-view>
+
+	<ion-content class="view-details">
+
+    <div class="content">
+        <h5>En details</h5>
+			
+			<div class="like" ng-click=""></div>
+
+        <div class="list">
+			<ul>
+				<li class="elmt">{{element.style}}</li>
+				<li class="elmt"><div class="libelle">Surface</div> {{element.surface}} m²</li>
+				<li class="elmt"><div class="libelle">Nbre de pièces</div>{{element.nbRooms}}</li>
+				<li class="elmt"><div class="libelle">Nbre de chambres</div>{{element.nbChambers}}</li>
+				<li class="elmt"><div class="libelle">{{element.equipements}}</div></li>
+				<li class="elmt"><div class="libelle">{{element.equipements}}</div></li>
+				<li class="elmt"><div class="libelle">{{element.equipements}}</div></li>
+				<li class="elmt"><div class="libelle">Classe d'énergie</div>{{element.energyClass}}</li>
+				<li class="elmt"><div class="libelle">GES</div>{{element.greenHouseGas}}</li>
+			</ul>
+        </div>
+    </div>
+
+	</ion-content>
+
+	<ion-footer-bar>
+		<div class="announcer">
+
+			<div id="announcerIcon">
+				<img src="img/perry.png" width="40" alt="">
+				<div class="isConnected"></div>
+			</div>
+
+			<div id="announcerName">
+				<div class="name">Gilles</div>
+				<div class="agency">Century 21</div>
+			</div>
+		</div>	
+		<div id="contact-clientView">
+			<a href="#/profile?toId={{creator}}"><span>Contact</span></a>
+		</div>		
+	</ion-footer-bar>
+</ion-view>
